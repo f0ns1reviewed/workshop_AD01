@@ -17,49 +17,73 @@ Hide your powershell script in plain sight! Invisi-Shell bypasses all of Powersh
 
 ## HOW IT WORKS
 
-The Invisi-shell project should be launched from an specific process on the wondows operative system:
+The Invisi-shell project should be launched from an specific process on the windows operative system:
+
 ```
   1.cmd.exe
   2.powrshell.exe
 ```
-There are two diferent ways for launch the Invisi-shell project, with Administrative or non administrative privileges.It should be launched using the following scripts:
+There are two different ways to launch the Invisi-shell project, with Administrative or non-administrative privileges. The project should be launched using the following scripts:
+
 ```
   1.Admin: RunWithPathAsAdmin.bat
   2.Not Admin: RunWithRegistryNonAdmin.bat
  ```
-The previous bat script prepare the Operative system for the execution of the child process Powershell. 
-The communication functions of the child process related with AMSI validation and Operative system Audit are hooked by the InvisiShellProfiler.dll dinamyc library using the public windows  [System.Management.Automation] and [System.Core] libraries.
+The both previous "bat" scripts prepare the Operating system for the execution of the child process Powershell.
+The communication functions of the child process related with AMSI validation and Operative system Audit are hooked by the InvisiShellProfiler.dll dynamic library, using the public windows [System.Management.Automation] and [System.Core] libraries.
 
 ![How Invishell Works](resources/Invisshell_how_it_works.png)
 
-Bat script example that prepare the operative system loading dinamyc library in the windows register:
+This is a bat script example, that prepare the operative system loading dynamic library in the windows register:
 
 ![Invishell script](resources/invishell.png)
 
-Opertive system registers validation:
+Operative system registers validation:
 
 ![Invishell registers](resources/Invishell_reg.png)
 
 
 ## BYPASS AMSI DEFENDER AUDIT EVTX
 
-AMSI Architecture and Invi-shell hook bypass:
+How Invisi-shell works across the windows AMSI architecture:
 
 ![Amsi bypass](resources/invi-shell_bypass.png)
 
-AMSI Sw level:
+AMSI architecture invocation level (SW):
 
 ![Amsi Architecture sw level](https://1.bp.blogspot.com/-AdO9FunaUBY/Wt2YS4wpIQI/AAAAAAAAJc8/yqSgf4L2PbMpHxgXePMYsqS3UXhL1dZ2wCLcBGAs/s1600/amsi4.png)
 
-Bypass windows defender enable evidences:
+The following evidence validate the the Windows Defender is active across the Operative System:
 
 ![Invishell script](resources/evtx_defender.png)
 
 ## SOURCE CODE ANALISYS
 
+The original source code is aviable on the following github repository:
+
 [Invi-shell (resources/Repository)](https://github.com/OmerYa/Invisi-Shell)
 
+Personal analysis of software architecture and hooked functions of powershell by Invisi-shell:
+
 ![Source Code Analisys](resources/Source_code_analisys.png)
+
+Hooked functions:
+
+| Package |	Class |	Function|
+|---------|-------|---------|
+| System.Management.Automation	| AmsiUtils	| ScanContent |
+| System.Management.Automation	| ScriptBlock	| WriteScriptBlockToLog |
+| System.Management.Automation	| ScriptBlock	| LogScriptBlockStart |
+| System.Management.Automation	| ScriptBlock	| LogScriptBlockEnd |
+| System.Management.Automation	| EventLogLogProvider	| LogEvent |
+| System.Management.Automation.Tracing	| PSEtwLogProvider	| WriteEvent |
+| System.Management.Automation.Host	| TranscriptionOption	| FlushContentToDisk |
+| System.Management.Automation	| ExecutionContext	| get_LanguageMode |
+| System.Management.Automation	| ExecutionContext	| get_HasEverUsedConstrainedLanguage |
+| System.Management.Automation	| ExecutionContext	| get_HasRunspaceEverUsedConstrainedLanguageMode |
+| System.Management.Automation	| ExecutionContext	| set_LanguageMode |
+| System.Diagnostics.Eventing.EventProvider	| EventProvider	| WriteTransferEvent |
+
 
 ## IOCS
 
