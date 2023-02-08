@@ -1,11 +1,19 @@
 
-## Detection
+# Detection
 
-Using Invi-shell is not possible common enumeration detection
+# Table of Contents
+
+  1. [ENUMERATION](#enumeration)
+  2. [PRIVILEGE ESCALATION](#privilege-escalation)
+
+
+## ENUMERATION
+
+During the enumeration process the attacker used Invi-shell with Powershell. For this reason is not possible detect the enumeration process across the operative system:
 
 [Anex A (resources/Invi-shell studied case)](invi-shell.md)
 
-## Privilege escalation:
+## PRIVILEGE ESCALATION:
 
 Binary process execution:
 
