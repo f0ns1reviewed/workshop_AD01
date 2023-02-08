@@ -16,10 +16,12 @@
 
 [Windos Response Collection](https://www.brimorlabs.com/Tools/LiveResponseCollection-Cedarpelta.zip)
 
-```
 
 ```
+.\Windows Live Response Collection.exe
+```
 
+[Windows Live Response Collection](resources/Windows_live_response_collection.png)
 
 # DUMP EVTX FROM MACHINE
 
