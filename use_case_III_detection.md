@@ -34,10 +34,13 @@ EVTX:
 ### Evidences
 
 ```
-RegRipper
-
+Using Windows Registry
 ```
+Default user credentials:
+![Autologon User](resources/Reg_ripper_autologon_1.png)
 
+Default user Password:
+![Autologon Password](resources/Reg_ripper_autologon_2.png)
 
 ### 1.4 PSRemoting
 
