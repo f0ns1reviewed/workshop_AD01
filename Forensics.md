@@ -11,6 +11,8 @@
   5.[REVIEW PARSED EVTX GUI](#review-parsed-evtx-gui)
   
   6.[REVIEW AND EXTRACT HIVES](#review-and-extract-hives)
+  
+  7.[REVIEW REGISTRY](#review-registry)
 
 # RECOLECTION AND EXTRACTION
 
@@ -73,7 +75,7 @@ PS Y:\chainsaw>  Get-ChildItem -Path Y:\CLIENT01_20230202_173838\DUMP_ALL_EVTX\ 
 ![RegRipper NTUSER.DATA](resources/RegRipper.png)
 
 # REVIEW REGISTRY
-[RegistryExplorer Zimmermen toll](https://f001.backblazeb2.com/file/EricZimmermanTools/RegistryExplorer.zip)
+[RegistryExplorer Zimmerman tool](https://f001.backblazeb2.com/file/EricZimmermanTools/RegistryExplorer.zip)
 
 ![RegistryExplorer](resources/Registry_explorer.png)
 
