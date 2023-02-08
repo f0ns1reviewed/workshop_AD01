@@ -27,6 +27,18 @@ During the enumeration process the attacker used Invi-shell with Powershell. For
 In order to perform aforensics analysis the Windows Live Response was executed on the afected server:
 [Forensics Tools](Forensics.md)
 
+Extract security events from Operative system:
+
+```
+wevtutil.exe epl Security Z:\local_priv.evtx
+```
+
+Parse security events:
+
+```
+Z:\EvtxECmd\EvtxECmd.exe -f Z:\local_priv.evtx --csv Z:\  --csvf local_priv_events.csv
+```
+![Parse security events](resources/parse_security_events.png)
 
 ### EVENTS TRIAGE
 
