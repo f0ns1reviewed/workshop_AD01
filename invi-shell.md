@@ -27,7 +27,9 @@ AMSI Sw level:
 
 ![Amsi Architecture sw level](https://1.bp.blogspot.com/-AdO9FunaUBY/Wt2YS4wpIQI/AAAAAAAAJc8/yqSgf4L2PbMpHxgXePMYsqS3UXhL1dZ2wCLcBGAs/s1600/amsi4.png)
 
+## SOURCE CODE ANALISYS
 
+![Source Code Analisys](resources/Source_code_analisys.png)
 
 ## IOCS
 
