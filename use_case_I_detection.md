@@ -28,7 +28,7 @@ During the enumeration process the attacker used Invi-shell with Powershell. For
 
 ### EVIDENCES RECOLECTION
 
-In order to perform aforensics analysis the Windows Live Response was executed on the afected server:
+In order to perform a forensics analysis the Windows Live Response was executed on the afected server:
 [Forensics Tools](Forensics.md)
 
 Extract security events from Operative system:
@@ -46,22 +46,35 @@ Z:\EvtxECmd\EvtxECmd.exe -f Z:\local_priv.evtx --csv Z:\  --csvf local_priv_even
 
 ### EVENTS TRIAGE
 
-Binary process execution:
+After recollection is performed the Windows Reollection live tool provide to the user the lastest, process executed on the operative system. And is possible to detect the execution of the binary by the service across the operative system:
 
 ![Invishell script](resources/binary_bat.png)
 
-
-Evtx evidences:
-
+The event that verify that service exected the binary:
 
 ![Invishell script](resources/servicio_ejecuta_binario_4688.png)
+
+
+Evtx evidences of new user group inclusion:
 
 ![Invishell script](resources/binario_grupo_admin.png)
 
 ![Invishell script](resources/binario_asocia_grupo1.png)
 
+Finally is possible detect reviewing the hives of the insider user a couple of evidences:
+
+  1. Modification of binary server.
+
+![access to binary bat](resources/modified_binary_bat.png)
+
+
+  2. Use of Invisi-Shell on the windows registers.
+
+![hive_binary](resources/hive_dll_load_register.png)
 
 ### TIMELINE PROCESS EXECUTION
+
+
 
 ### VULNERABILITY DETECTION 
 
