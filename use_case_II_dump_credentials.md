@@ -29,7 +29,7 @@ The [Sharpkatz.exe] process set the operative system privilege SeCreateGlobalPri
 
 ![shapkatz evidences 2](resources/sharpkatz_evidences_2.png)
 
-Identifiers manipulation by origin process [0x11b0] SharpKatz.exe over external process [0x4]:
+Identifiers manipulation by origin process [0x11b0] SharpKatz.exe over external process [0x4] == [0x2b0]:
 
 ![shapkatz evidence 4](resources/sharpkatz_evidences_4.png)
 
@@ -46,6 +46,8 @@ Access to kernel object by [0x11b0] SharpKatz.exe:
 ![shapkatz evidences 8](resources/sharpkatz_evidences_8.png)
 
 ![shapkatz evidences 9](resources/shapkatz_evidences_9.png)
+
+Access to kernel object by [0x11b0] SharpKatz.exe and  delete permissions:
 
 ![shapkatz evidences 10](resources/sharpkatz_evidences_10.png)
 
