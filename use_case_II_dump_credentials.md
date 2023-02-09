@@ -2,45 +2,15 @@
 
 ## Table of content
 
-  1. [EVIDENCES RECOLECTION](#evidences-recolection)
-  2. [EVENTS TRIAGE](#events-triage)
-  3. [VULNERABILITY DETECTION](#vulnerability-detection)  
-  4. [CONSLUSIONS](#conclusions)
+  1. [SECURITY EVENTS TRIAGE](#security-events-triage)
+  2. [VULNERABILITY DETECTION](#vulnerability-detection)  
+  3. [CONCLUSIONS](#conclusions)
 
 
-### EVIDENCES RECOLLECTION
+### SECURITY EVENTS TRIAGE
 
-In order to perform a forensic analysis the Windows Live Response was executed on the afected server:
-[Forensics Tools](Forensics.md)
+After security events triage, the most important evidences could be find on the following list:
 
-Extract security events from Operative system:
-
-```
-wevtutil.exe epl Security Z:\local_priv.evtx
-```
-
-Parse security events:
-
-```
-Z:\EvtxECmd\EvtxECmd.exe -f Z:\local_priv.evtx --csv Z:\  --csvf local_priv_events.csv
-```
-![Parse security events](resources/parse_security_events.png)
-
-Extract System events from Operative system:
-
-```
-wevtutil.exe epl System Z:\local_priv_system.evtx
-```
-
-Parse System events:
-
-```
-Z:\EvtxECmd\EvtxECmd.exe -f Z:\local_priv_system.evtx --csv Z:\  --csvf local_priv_events_system.csv
-```
-![Parse security events](resources/parse_security_events.png)
-
-
-### EVENTS TRIAGE
 ```
 EVTX: 
 4688: Process execution 
@@ -51,10 +21,6 @@ EVTX:
 4658, 4653, 4663: kernel Object access
 4689: End of processs
 ```
-### 1.1 Output
-![shapkatz output](resources/sharpkatz_output.png)
-
-### 1.2 Evidences
 
 ![shapkatz evidences 1](resources/sharpkatz_evidences_1.png)
 
@@ -82,6 +48,12 @@ EVTX:
 
 ## VULNERABILITY DETECTION
 
+One of domain users [AD\worker01] was logged on the target server and the account've never been logoff, for this reason an authenticated local users with Administrator privileges on the workstation could dump the LSASS process on of the Operative System.
+This process contains on dynamic memory the plaintext credentials and ntlm hash of the user:
 
-## CONSLUSIONS
+![shapkatz output](resources/sharpkatz_output.png)
+
+## CONCLUSIONS
+
+The local [insider] user spawn a terminal with [f0ns1] local user Administrator. After dump  credentials the [f0ns1] could impersonate to domain user [AD\worker01.
 
