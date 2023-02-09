@@ -1,5 +1,7 @@
 # Dump Credentials
 
+![Fileless dump credentials](resources/FIleless.png)
+
 ## Table of content
 
   1. [SECURITY EVENTS TRIAGE](#security-events-triage)
