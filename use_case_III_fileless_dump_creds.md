@@ -2,7 +2,7 @@
 
 ## Table of content
 
-  1. [EVENTS TRIAGE](#events-triage)
+  1. [SECURITY EVENTS TRIAGE](#events-triage)
   2. [VULNERABILITY DETECTION](#vulnerability-detection)  
   3. [CONSLUSIONS](#conclusions)
 
