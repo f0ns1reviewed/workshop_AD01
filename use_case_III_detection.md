@@ -1,75 +1,49 @@
-# 1. Privilege Escalation
+# Detection
+* For this study is requiered update the GPO policy on the target or in the Domain controller with the following configuration:
+[Enable Events 4688](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/component-updates/command-line-process-auditing)
 
-## 1.2 Fileless Enumeration
-
-### Output
-![fileless output](resources/Fileless_ActiveDirectory.png)
-
-### Evidences
-
-Windows Active Directory side (resources/powershell enumeration):
-```
-EVTX:
-4104 x 49
-
-```
-![fileless Load_powerup](resources/fileless_load_1.png)
-
-![fileless Load_powerup](resources/fileless_load_1.png)
-
-Windows client side (resources/python server):
-```
-EVTX:
-5156
-
-```
-![Python Server](resources/python_server.png)
+This configuration enable the audit of process creation command line with EventID 4688.
 
 
+## Table of content
 
-### 1.3 Fileless Privilege Escalation
+  1. [FILELESS ENUMERATION](use_case_III_fileless_enumeration.md)
+  2. [FILELESS PRIVESC](use_case_III_fileless_privesc.md)
+  3. [FILELESS DUMP CREDENTIALS](use_case_III_fileless_dump_creds.md)  
+  
+***The recollection process is global, for the previous uses cases:***
 
-### Output
-![Autologon credentials](resources/Autologon_vuln.png)
-### Evidences
+
+### EVIDENCES RECOLLECTION
+
+In order to perform a forensic analysis the Windows Live Response was executed on the afected server:
+[Forensics Tools](Forensics.md)
+
+Extract security events from Operative system:
 
 ```
-Using Windows Registry
-```
-Default user credentials:
-![Autologon User](resources/Reg_ripper_autologon_1.png)
-
-Default user Password:
-![Autologon Password](resources/Reg_ripper_autologon_2.png)
-
-### 1.4 PSRemoting
-
-### Output
-![fileless output](resources/psremoting_output.png)
-### Evidences
-
-```
-EVTX:
-
-```
-![Logon 1](resources/Logon_1.png)
-![Logon 2](resources/Login_2.png)
-![Logon 3](resources/Logon_3.png)
-
-
-# 2 Dump Credentials
-
-### Output
-![fileless output](resources/Invoke-Mimi_fileless.png)
-
-![fileless output](resources/Dump.png)
-
-### Evidences
-
-```
-EVTX:
-
+wevtutil.exe epl Security Z:\local_priv.evtx
 ```
 
-![fileless output](resources/Fileless_mimikatz_1.png)
-![fileless output](resources/Fileless_mimikatz_251.png)
+Parse security events:
+
+```
+Z:\EvtxECmd\EvtxECmd.exe -f Z:\local_priv.evtx --csv Z:\  --csvf local_priv_events.csv
+```
+![Parse security events](resources/parse_security_events.png)
+
+Extract System events from Operative system:
+
+```
+wevtutil.exe epl System Z:\local_priv_system.evtx
+```
+
+Parse System events:
+
+```
+Z:\EvtxECmd\EvtxECmd.exe -f Z:\local_priv_system.evtx --csv Z:\  --csvf local_priv_events_system.csv
+```
+![Parse security events](resources/parse_security_events.png)
+
+
+
