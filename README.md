@@ -1,6 +1,6 @@
 # Workshop 01
 
-![workshop content](Content_Worksop_01_AD.png)
+![workshop content](resources/Content_Worksop_01_AD.png)
 
 ## Table of contents 
 
