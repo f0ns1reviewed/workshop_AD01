@@ -48,12 +48,16 @@ EVTX:
 
 ## VULNERABILITY DETECTION
 
-One of domain users [AD\worker01] was logged on the target server and the account've never been logoff, for this reason an authenticated local users with Administrator privileges on the workstation could dump the LSASS process on of the Operative System.
-This process contains on dynamic memory the plaintext credentials and ntlm hash of the user:
+One of domain users [AD\worker01] was logged on the target server and the account've never been logoff, for this reason an authenticated local user with Administrator privileges on the workstation could dump the LSASS process of the Operative System.
+This process contains on dynamic memory, the plaintext credentials and ntlm hash of the user:
 
 ![shapkatz output](resources/sharpkatz_output.png)
 
 ## CONCLUSIONS
 
-The local [insider] user spawn a terminal with [f0ns1] local user Administrator. After dump  credentials the [f0ns1] could impersonate to domain user [AD\worker01.
+  1.  The local user [insider] spawn a terminal 
+  2.  The terminal belong to [f0ns1] local user Administrator. 
+  3.  After dump  credentials the [f0ns1] could impersonate to domain user [AD\worker01]
 
+
+![conclussions](resources/Conclussions_II.png)
