@@ -2,13 +2,13 @@
 
 ## Table of content
 
-  1. [SECURITY EVENTS TRIAGE](#events-triage)
+  1. [SECURITY EVENTS TRIAGE](#security-events-triage)
   2. [VULNERABILITY DETECTION](#vulnerability-detection)  
   3. [CONSLUSIONS](#conclusions)
 
 
 
-## EVENTS TRIAGE
+## SECURITY EVENTS TRIAGE
 
 ### Evidences
 
