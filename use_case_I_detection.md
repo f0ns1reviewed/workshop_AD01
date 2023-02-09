@@ -60,61 +60,64 @@ Z:\EvtxECmd\EvtxECmd.exe -f Z:\local_priv_system.evtx --csv Z:\  --csvf local_pr
 
 ### EVENTS TRIAGE
 
-After recollection is performed the Windows Reollection live tool provide to the user the lastest, process executed on the operative system. And is possible to detect the execution of the binary by the service across the operative system:
+After recollection is performed with the Windows Recollection live tool, the user latest executive processes on the operative system was provided as output file. And is possible to detect the execution of the binary by the service:
 
 ![Invishell script](resources/binary_bat.png)
 
-The event that verify that service exected the binary:
+The event that verify that service executed the binary:
 
 ![Invishell script](resources/servicio_ejecuta_binario_4688.png)
 
-
-Evtx evidences of new user group inclusion:
+Evidences of latest vulnerable service execution, with output error status:
 
 ![Service execution](resources/execution_error_workshop_vuln.png) 
 
 ![Service execution](resources/service_modified_execution.png)
 
-Finally is possible detect reviewing the hives of the insider user a couple of evidences:
+Finally, is possible detect in the user "insider" hives a couple of evidence:
 
-  1. Modification of binary server. Using the Reg Ripper sofware available on the forensics Tool reference [Forensics Tools](Forensics.md):
+  1. Modification of binary executed by vulnerable service "worksop_vuln". Using the Reg Ripper sofware available on the "forensics Tool reference" [Forensics Tools](Forensics.md):
 
 ![access to binary bat](resources/modified_binary_bat.png)
 
 
-  2. The threat user load the Invisi-Shell on the windows registers. Using the Register software avaliable on the forensics Tool reference [Forensics Tools](Forensics.md):
+  2. The evidence of the threat user when the operative system load the Invisi-Shell on the windows registers. Using the Register software avaliable on the "forensics Tool reference" [Forensics Tools](Forensics.md):
 
 ![hive_binary](resources/hive_dll_load_register.png)
 
 ### VULNERABILITY DETECTION 
 
-Detected attack vector:
+It's possible too, detect the attack vector:
 
 ```
-The target service execute a binary process that could be modified for all authenticated users at the operative system.
+The target service "worksop_vuln", execute a binary file that could be modified for all authenticated users at the operative system.
 
 ```
 
 ![Invishell script](resources/permisios_servicio.png)
 
-The source code of the modified service, after and before the threat actor access to the oeprative system:
+The source code of the modified service, after and before that the threat actor access to the binary:
 
 ![Invishell script](resources/modificacion_de_servicio.png)
 
 
 ### CONCLUSIONS
 
-From de tection side, it's posible determine that the user [insider] use the invisi-shell in order to cover the clues for the operative system enumeration and modifications performe for the privilege escalation.
+From detection side, it's posible determine that the user [insider] use the invisi-shell in order to cover the clues, for the operative system enumeration and modifications performed for the privilege escalation.
 
-But it's possible detect that the user access and modified the content of the binary:
+But It's possible, detect that the user access and modified the content of the binary:
+
 ``` 
 C:\Users\Public\binary.bat
 ```
 
 This binary, was executed by the service with a final error status execution after opertive system reboot.
 
-The  operative system event do not cover the new local user creation and the local administrator privileges asigned, but in the output data of the windows Live Response Tool, is  possible detect all the users and permissions on the Operative system .
+On the one side, the events recordered by the operative system do not cover the new local user creation and the local administrator privileges asigned, by the service "worksop_vuln" executed during the System startup, but in the output data of the windows Live Response Tool, is  possible detect all the users and permissions on the Operative system.
 
+On the other side the Operative System report the creation date od the new user f0ns1 that belong to the Administradores local group:
+
+![user creation date](resources/user_creation_date.png)
  
 
 
