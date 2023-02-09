@@ -1,18 +1,13 @@
+# Fileless Enumeration
 
 ## Table of content
 
-  1. [EVIDENCES RECOLECTION](#evidences-recolection)
-  2. [EVENTS TRIAGE](#events-triage)
-  3. [VULNERABILITY DETECTION](#vulnerability-detection)  
-  4. [CONSLUSIONS](#conclusions)
+  1. [EVENTS TRIAGE](#events-triage)
+  2. [VULNERABILITY DETECTION](#vulnerability-detection)  
+  3. [CONSLUSIONS](#conclusions)
 
 
-# 1. Privilege Escalation
-
-## 1.2 Fileless Enumeration
-
-### Output
-![fileless output](resources/Fileless_ActiveDirectory.png)
+## EVENTS TRIAGE
 
 ### Evidences
 
@@ -33,3 +28,12 @@ EVTX:
 
 ```
 ![Python Server](resources/python_server.png)
+
+## VULNERABILITY DETECTION
+
+### Output
+
+![fileless output](resources/Fileless_ActiveDirectory.png)
+
+## CONCLUSIONS
+
