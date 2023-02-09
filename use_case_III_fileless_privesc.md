@@ -1,7 +1,12 @@
-### 1.3 Fileless Privilege Escalation
+## Fileless Privilege Escalation
 
-### Output
-![Autologon credentials](resources/Autologon_vuln.png)
+## Table of content
+
+  1. [EVENTS TRIAGE](#events-triage)
+  2. [VULNERABILITY DETECTION](#vulnerability-detection)  
+  3. [CONSLUSIONS](#conclusions)
+
+## EVENTS TRIAGE
 ### Evidences
 
 ```
@@ -12,6 +17,12 @@ Default user credentials:
 
 Default user Password:
 ![Autologon Password](resources/Reg_ripper_autologon_2.png)
+
+## VULNERABILITY DETECTION
+
+### Output
+![Autologon credentials](resources/Autologon_vuln.png)
+
 
 ### 1.4 PSRemoting
 
@@ -26,3 +37,6 @@ EVTX:
 ![Logon 1](resources/Logon_1.png)
 ![Logon 2](resources/Login_2.png)
 ![Logon 3](resources/Logon_3.png)
+
+## CONCLUSIONS 
+
