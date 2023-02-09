@@ -1,6 +1,15 @@
 ## LATERAL MOVEMENT
 
-### 2.1 Use mimikatz: f0ns1 (resources/Local System Administrator) --> worker01 (resources/Domain ad.forest.corp user)
+## Table of content
+
+  1. [SECURITY EVENTS TRIAGE](#security-events-triage)
+  2. [VULNERABILITY DETECTION](#vulnerability-detection)  
+  3. [CONCLUSIONS](#conclusions)
+
+
+### SECURITY EVENTS TRIAGE
+
+### Use mimikatz: f0ns1 (resources/Local System Administrator) --> worker01 (resources/Domain ad.forest.corp user)
 
 ```
 EVTX:
@@ -17,9 +26,6 @@ EVTX:
 4690: Identifiers manipulation
 4658, 4656, 4663: Kernel objects
 ```
-### 2.2 Output
-![pth new terminal](resources/pth_new_terminal.png)
-### 2.3 Evidenes
 
 ![PassThehash evidences 1](resources/pth_1.png)
 ![PassThehash evidences 2](resources/pth_2.png)
@@ -34,4 +40,15 @@ EVTX:
 ![PassThehash evidences 11](resources/pth_11.png)
 ![PassThehash evidences 12](resources/pth_12.png)
 ![PassThehash evidences 12](resources/pth_13.png)
+
+
+## VULNERABILITY DETECTION
+
+![pth new terminal](resources/pth_new_terminal.png)
+
+## CONCLUSIONS
+
+
+
+
 
