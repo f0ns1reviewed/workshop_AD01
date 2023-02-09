@@ -14,19 +14,34 @@
 
 ### Evidences
 
+After security events triage, the most important evidences could be find on the following list :
+
 ```
 EVTX:
 
+4104 x251
 ```
 
 ![fileless output](resources/Fileless_mimikatz_1.png)
 ![fileless output](resources/Fileless_mimikatz_251.png)
 
+
 ## VULNERABILITY DETECTION
 
-![fileless output](resources/Invoke-Mimi_fileless.png)
+There isn't vulnerabilities on this section.
 
-![fileless output](resources/Dump.png)
 
 ## CONCLUSIONS
 
+The attacker with Administrative rights can dump the Lsass.exe process on the Active Directory server:
+
+![fileless output](resources/Invoke-Mimi_fileless.png)
+
+Maybe, one of these users could belong to the trusted Forest Active directory domain?
+
+![New Target server](resources/new_target_server.png)
+
+![fileless output](resources/Dump.png)
+
+
+# TO BE CONTINUE ....
