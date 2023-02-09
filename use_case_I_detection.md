@@ -23,12 +23,12 @@ During the enumeration process the attacker used Invi-shell with Powershell. For
 
   1. [EVIDENCES RECOLECTION](#evidences-recolection)
   2. [EVENTS TRIAGE](#events-triage)
-  3. [TIMELINE PROCESS EXECUTION](#timeline-process-execution)
-  4. [VULNERABILITY DETECTION](#vulnerability-detection)  
+  3. [VULNERABILITY DETECTION](#vulnerability-detection)  
+  4. [CONSLUSIONS](#conclusions)
 
-### EVIDENCES RECOLECTION
+### EVIDENCES RECOLLECTION
 
-In order to perform a forensics analysis the Windows Live Response was executed on the afected server:
+In order to perform a forensic analysis the Windows Live Response was executed on the afected server:
 [Forensics Tools](Forensics.md)
 
 Extract security events from Operative system:
@@ -44,6 +44,20 @@ Z:\EvtxECmd\EvtxECmd.exe -f Z:\local_priv.evtx --csv Z:\  --csvf local_priv_even
 ```
 ![Parse security events](resources/parse_security_events.png)
 
+Extract System events from Operative system:
+
+```
+wevtutil.exe epl System Z:\local_priv_system.evtx
+```
+
+Parse System events:
+
+```
+Z:\EvtxECmd\EvtxECmd.exe -f Z:\local_priv_system.evtx --csv Z:\  --csvf local_priv_events_system.csv
+```
+![Parse security events](resources/parse_security_events.png)
+
+
 ### EVENTS TRIAGE
 
 After recollection is performed the Windows Reollection live tool provide to the user the lastest, process executed on the operative system. And is possible to detect the execution of the binary by the service across the operative system:
@@ -57,24 +71,20 @@ The event that verify that service exected the binary:
 
 Evtx evidences of new user group inclusion:
 
-![Invishell script](resources/binario_grupo_admin.png)
+![Service execution](resources/execution_error_workshop_vuln.png) 
 
-![Invishell script](resources/binario_asocia_grupo1.png)
+![Service execution](resources/service_modified_execution.png)
 
 Finally is possible detect reviewing the hives of the insider user a couple of evidences:
 
-  1. Modification of binary server.
+  1. Modification of binary server. Using the Reg Ripper sofware available on the forensics Tool reference [Forensics Tools](Forensics.md):
 
 ![access to binary bat](resources/modified_binary_bat.png)
 
 
-  2. Use of Invisi-Shell on the windows registers.
+  2. The threat user load the Invisi-Shell on the windows registers. Using the Register software avaliable on the forensics Tool reference [Forensics Tools](Forensics.md):
 
 ![hive_binary](resources/hive_dll_load_register.png)
-
-### TIMELINE PROCESS EXECUTION
-
-
 
 ### VULNERABILITY DETECTION 
 
@@ -90,4 +100,25 @@ The target service execute a binary process that could be modified for all authe
 The source code of the modified service, after and before the threat actor access to the oeprative system:
 
 ![Invishell script](resources/modificacion_de_servicio.png)
+
+
+### CONCLUSIONS
+
+From de tection side, it's posible determine that the user [insider] use the invisi-shell in order to cover the clues for the operative system enumeration and modifications performe for the privilege escalation.
+
+But it's possible detect that the user access and modified the content of the binary:
+``` 
+C:\Users\Public\binary.bat
+```
+
+This binary, was executed by the service with a final error status execution after opertive system reboot.
+
+The  operative system event do not cover the new local user creation and the local administrator privileges asigned, but in the output data of the windows Live Response Tool, is  possible detect all the users and permissions on the Operative system .
+
+ 
+
+
+
+
+
 
