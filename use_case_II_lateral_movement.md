@@ -78,6 +78,11 @@ The threat actor [CLIENT01\insider] using the new local administrator user [CLIE
 
 ![pth new terminal](resources/pth_new_terminal.png)
 
+The vulnerability using PTH was detected via TimeLine execution :
+
+![TImeline pth](resources/mimikatz_pth_worker01.png)
+
+
 ## CONCLUSIONS
 
 There aren't vulnerabilities on this section, but It si possible determine the impersonation of the threat actor to the domain user via [mimikatz.exe] tool:
