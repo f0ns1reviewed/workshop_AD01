@@ -1,5 +1,13 @@
 ## ACCESS TO DOMAIN CONTROLLER
 
+## Table of content
+
+  1. [SECURITY EVENTS TRIAGE](#security-events-triage)
+  2. [VULNERABILITY DETECTION](#vulnerability-detection)  
+  3. [CONCLUSIONS](#conclusions)
+
+
+## SECURITY EVENTS TRIAGE
 ```
 EVTX: 
 4648: Session Init
@@ -7,13 +15,15 @@ EVTX:
 5158: Connection to platform
 ```
 
-
-### 3.2 Output
-
-![PSRemoting worker01](resources/PSRrmoting_worker01.png)
-
-### 3.3 Evidences
-
 ![PSRemoting worker01](resources/PSRemoting_1.png)
 ![PSRemoting worker01](resources/PSRemoting_2.png)
 ![PSRemoting worker01](resources/PSRemoting_3.png)
+
+
+## VULNERABILITY DETECTION
+
+
+
+## CONCLUSIONS
+
+![PSRemoting worker01](resources/PSRrmoting_worker01.png)
