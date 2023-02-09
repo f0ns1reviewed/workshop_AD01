@@ -1,5 +1,9 @@
 
 # Detection
+* For this study is requiered update the GPO policy on the target or in the Domain controller with the following configuration:
+[Enable Events 4688](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/component-updates/command-line-process-auditing)
+
+This configuration enable the audit of process creation command line with EventID 4688.
 
 # Table of Contents
 
