@@ -21,18 +21,25 @@ EVTX:
 4658, 4653, 4663: kernel Object access
 4689: End of processs
 ```
+The Parent process of the threat actor [powershell], create a child process that invoke the binary [SharpKatz.exe]:
 
 ![shapkatz evidences 1](resources/sharpkatz_evidences_1.png)
 
+The [Sharpkatz.exe] process set the operative system privilege SeCreateGlobalPrivilege:
+
 ![shapkatz evidences 2](resources/sharpkatz_evidences_2.png)
 
-![shapkatz evidences 3](resources/sharpkatz_evidences_3.png)
+Identifiers manipulation by origin process [0x11b0] SharpKatz.exe over external process [0x4]:
 
 ![shapkatz evidence 4](resources/sharpkatz_evidences_4.png)
+
+The [0x11b0] SharpKatz.exe try to access to [0x2b0] LSASS process, with the following privileges:
 
 ![shapkatz evidences 5](resources/sharpkatz_evidences_5.png)
 
 ![shapkatz evidences 6](resources/sharpkatz_evidences_6.png)
+
+Access to kernel object by [0x11b0] SharpKatz.exe:
 
 ![shapkatz evidences 7](resources/sharpkatz_evidences_7.png)
 
