@@ -14,7 +14,7 @@
 
   1.1 [ACTIVE DIRECTORY SIDE](#active-directory-side)
   
-  1.2 [CLIENT01 SID](#client01-side)
+  1.2 [CLIENT01 SIDE](#client01-side)
   
   
 ### ACTIVE DIRECTORY SIDE
