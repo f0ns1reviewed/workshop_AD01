@@ -60,7 +60,12 @@ Access to kernel object by [0x11b0] SharpKatz.exe and  delete permissions:
 One of domain users [AD\worker01] was logged on the target server and the account've never been logoff, for this reason an authenticated local user with Administrator privileges on the workstation could dump the LSASS process of the Operative System.
 This process contains on dynamic memory, the plaintext credentials and ntlm hash of the user:
 
-![shapkatz output](resources/sharpkatz_output.png)
+![sharpkatz output](resources/sharpkatz_output.png)
+
+Lsass Access by SharpKatz.exe with administrative privileges:
+
+![time_line_sharpkatz](resources/lsass_access.png)
+
 
 ## CONCLUSIONS
 
