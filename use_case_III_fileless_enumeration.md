@@ -13,7 +13,9 @@
 ## Table of content 
 
   1.1 [ACTIVE DIRECTORY SIDE](#active-directory-side)
+  
   1.2 [CLIENT01 SID](#client01-side)
+  
   
 ### ACTIVE DIRECTORY SIDE
 After security events triage, the most important evidences could be find on the following list :
@@ -37,6 +39,8 @@ EVTX:
 5156
 
 ```
+Python server with the [PowerUp.ps1] script content on the source machine:
+
 ![Python Server](resources/python_server.png)
 
 ## VULNERABILITY DETECTION
